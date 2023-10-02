@@ -28,7 +28,7 @@ def laplace2d(phi, v0x, dx, dy, l1norm_target):
 
 
 def outer_boundary_conditions(phi, v0x, dx):
-    phi[:, 1] = v0x * dx + phi[:, 0]
+    phi[:, 0] = v0x * dx + phi[:, 1]
     phi[:, -1] = v0x * dx + phi[:, -2]
     phi[-1, :] = phi[-2, :]
     phi[1, :] = phi[0, :]
